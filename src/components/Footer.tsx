@@ -3,17 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-gray-900 p-6 shadow-md mt-6">
+        <footer className="bg-gray-900 p-3 shadow-md mt-6">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-300">
-                <div className="mb-4 md:mb-0">
-                    <h4 className="text-white text-xl font-bold mb-2">Alex P. Joseph</h4>
-                    <p className="text-sm">Full Stack Developer</p>
-                </div>
                 <div className="mb-4 md:mb-0">
                     <h4 className="text-white text-lg font-bold mb-2">Quick Links</h4>
                     <ul className="space-y-2">
-                        <li><NavLink to="/about" className="hover:text-white transition duration-300">About Me</NavLink></li>
-                        <li><NavLink to="/portfolio" className="hover:text-white transition duration-300">Portfolio</NavLink></li>
+                        <li><NavLink to="/Endeavors" className="hover:text-white transition duration-300">Endeavors</NavLink></li>
+                        <li><NavLink to="/projects" className="hover:text-white transition duration-300">Projects</NavLink></li>
                         <li><NavLink to="/blogs" className="hover:text-white transition duration-300">Blogs</NavLink></li>
                         <li><NavLink to="/achievements" className="hover:text-white transition duration-300">Achievements</NavLink></li>
                     </ul>
@@ -31,7 +27,7 @@ const Footer: React.FC = () => {
                         <i className="fab fa-github"></i> GitHub
                     </a>
                     <a href="https://huggingface.co/APJ23" target="_blank" rel="noopener noreferrer" className="hover:text-white transition duration-300">
-                        <i className="fab fa-twitter"></i> HuggingFace
+                        <i className="fab fa-huggingface"></i> HuggingFace
                     </a>
                 </div>
             </div>

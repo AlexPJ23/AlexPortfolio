@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar: React.FC = () => {
     // List of tabs to populate the navbar given the tab name and the path
     const ListOfItems: [string, string][] = [
-        ["About Me", "/about"],
+        ["Endeavors", "/endeavors"],
         ["Projects", "/projects"],
         ["Blogs", "/blogs"],
         ["Achievements", "/achievements"]
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
     );
 
     return (
-        <nav className="bg-gray-900 p-6 shadow-md">
+        <nav className="bg-gray-900 p-6 shadow-md sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-white text-2xl font-bold">
                     <NavLink to="/">Alex P. Joseph</NavLink>
