@@ -10,12 +10,13 @@ const Navbar: React.FC = () => {
         ["Achievements", "/achievements"]
     ];
 
+    // @ts-ignore
     const LinkClass = ({ isActive }) => (
         isActive ? "text-white" : "text-gray-300"
     );
 
     return (
-        <nav className="bg-gray-900 p-6 shadow-md sticky top-0 z-50">
+        <nav className="bg-gray-900 p-6 shadow-md top-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-white text-2xl font-bold">
                     <NavLink to="/">Alex P. Joseph</NavLink>
