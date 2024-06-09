@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
         ["Achievements", "/achievements"]
     ];
 
+    // @ts-ignore
     const LinkClass = ({ isActive }) => (
         isActive ? "text-white" : "text-gray-300"
     );
