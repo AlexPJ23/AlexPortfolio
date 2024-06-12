@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { EndeavorModel } from '../types/EndeavorModel';
-
+import SpinIt from '../components/Spinner';
 
 const SinglePageEndeavor: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -10,6 +10,10 @@ const SinglePageEndeavor: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  if (endeavor) {
+    let time = new Date(endeavor.created_at).toLocaleDateString();
+    endeavor.created_at = time;
+  }
   useEffect(() => {
     const EndeavorLoader = async () => {
       try {
@@ -31,7 +35,7 @@ const SinglePageEndeavor: React.FC = () => {
   }, [id]);
 
   if (loading) {
-    return <div className='text-center my-8'>Loading...</div>;
+    return <SpinIt />;
   }
 
   if (error) {
@@ -52,11 +56,10 @@ const SinglePageEndeavor: React.FC = () => {
           </div>
           <div className='bg-gray-100 p-6 rounded-lg shadow-md'>
             <h2 className='text-2xl font-bold mb-4'>Details</h2>
-            <p className='text-gray-700'>Status: <span className='font-semibold'>{endeavor.status}</span></p>
+            <p className='text-gray-700'>Status: <span className='font-semibold'>{endeavor.status[0].toUpperCase() + endeavor.status.slice(1) }</span></p>
             <p className='text-gray-700'>Start Date: <span className='font-semibold'>{endeavor.created_at}</span></p>
-            <p className='text-gray-700'>End Date: <span className='font-semibold'>{endeavor.update_at}</span></p>
             <p className='text-gray-700'>Priority: <span className={`font-semibold ${priorityColor} text-white px-2 py-1 rounded`}>{endeavor.priority}</span></p>
-            <p className='text-gray-700'>Type: <span className='font-semibold'>{endeavor.type}</span></p>
+            <p className='text-gray-700'>Type: <span className='font-semibold'>{endeavor.type[0].toUpperCase() + endeavor.type.slice(1)}</span></p>
           </div>
           <div className='bg-gray-100 p-6 rounded-lg shadow-md col-span-1 md:col-span-2'>
             <h2 className='text-2xl font-bold mb-4'>Tasks</h2>

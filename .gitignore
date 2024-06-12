@@ -27,3 +27,4 @@ dist-ssr
 *.env
 
 tempCodeRunnerFile.js
+vite.config.ts

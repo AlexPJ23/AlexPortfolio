@@ -38,7 +38,7 @@ const EndeavorCard = ({ endeavor  } : EndeavorCardProps ) => {
                     <span className='text-orange-700'>Created On: {endeavor.created_at}</span>
                 </div>
             </Card>
-            < Link to={`/endeavors/${endpoint}`} className='absolute bottom-0 right-0 bg-blue-500 text-white py-2 px-4 rounded-bl-xl rounded-tr-xl'>View</Link>
+            < Link to={`/endeavors/${endpoint}`} className='absolute bottom-0 right-0 bg-blue-500 text-white py-1 px-4 rounded-bl-xl rounded-tr-xl'>View</Link>
         </Card>
     );
 }

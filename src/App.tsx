@@ -9,12 +9,18 @@ import MainLayout from "./layouts/MainLayout"
 import EndeavorPage from "./pages/EndeavorPage"
 import NotFoundPage from "./pages/NotFoundPage"
 import SinglePageEndeavor from "./pages/SingleEndeavorPage"
+import ProjectsPage from "./pages/ProjectsPage"
+import BlogsPage from "./pages/BlogsPage"
+import AchievementPage from "./pages/AchievementPage"
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<MainLayout/>}>
          <Route index element={<HomePage />}/>
          <Route path="/endeavors" element={<EndeavorPage />}/>
          <Route path="/endeavors/:id" element={<SinglePageEndeavor />}/>
+         <Route path='/projects' element={<ProjectsPage />}/>
+         <Route path="/blogs" element={<BlogsPage />}/>
+         <Route path="/achievements" element={<AchievementPage />}/>
          <Route path="*" element={<NotFoundPage/>}/>
         </Route>
 )
