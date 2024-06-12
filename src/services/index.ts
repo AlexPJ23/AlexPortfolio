@@ -1,12 +1,12 @@
 import * as express from 'express';
 import * as cors from 'cors';
 import { connectToDatabase } from './database.service';
-import { endeavorsRouter } from '../routes/server'
+import { endeavorsRouter } from '../routes/endeavorsRoute'
 import * as dotenv from 'dotenv';
 
 
 const app = express();
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:8000'];
+const allowedOrigins = ['http://localhost:3000', '/api'];
 
 app.use(cors({
     origin: function (origin, callback) {

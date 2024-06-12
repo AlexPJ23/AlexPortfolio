@@ -11,15 +11,31 @@ endeavorsRouter.use(express.json());
 
 
 
-endeavorsRouter.get('/', async (_req: express.Request, res: express.Response) => {
+endeavorsRouter.get('/', async (req: express.Request, res: express.Response) => {
+    const page = parseInt(req.query.page as string) || 1;
+    const perPage = parseInt(req.query.perPage as string) || 3;
+
     try {
-        const endeavors = await collections.endeavors!.find().toArray();
+        const endeavors = await collections.endeavors!
+            .find()
+            .skip((page - 1) * perPage)
+            .limit(perPage)
+            .toArray();
+
         res.status(200).json(endeavors);
     } catch (error) {
         res.status(500).send('Error fetching endeavors from database');
     }
-}
-);
+});
+
+endeavorsRouter.get('/count', async (_req: express.Request, res: express.Response) => {
+    try {
+        const count = await collections.endeavors!.countDocuments();
+        res.status(200).json({ total: count });
+    } catch (error) {
+        res.status(500).send('Error fetching endeavor count from database');
+    }
+});
 
 endeavorsRouter.get('/:id', async (req: express.Request, res: express.Response) => {
     const id = req?.params?.id;
