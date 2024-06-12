@@ -1,4 +1,3 @@
-import { TaskModel } from './EndeavorModel';
 export type ProjectModel =
 {
     _id: string;
@@ -10,5 +9,5 @@ export type ProjectModel =
     priority : 1 | 2 | 3 | 4 | 5; // 1 is the highest priority and 5 is the lowest
     owner: string;
     participants: string[];
-    tasks: TaskModel[];
+    tasks: string[];
 };

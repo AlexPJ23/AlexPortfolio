@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var cors = require("cors");
 var database_service_1 = require("./database.service.cjs");
-var server_1 = require("../routes/server.cjs");
+var server_1 = require("../routes/endeavorsRoute.cjs");
 var dotenv = require("dotenv");
 var app = express();
 var allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000']; 

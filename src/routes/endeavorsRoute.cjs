@@ -55,20 +55,47 @@ exports.endeavorsRouter.use(cors({
         return callback(null, true);
     }
 }));
-exports.endeavorsRouter.get('/', function (_req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var endeavors, error_1;
+exports.endeavorsRouter.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var page, perPage, endeavors, error_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                page = parseInt(req.query.page) || 1;
+                perPage = parseInt(req.query.perPage) || 3;
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, database_service_1.collections.endeavors
+                        .find()
+                        .skip((page - 1) * perPage)
+                        .limit(perPage)
+                        .toArray()];
+            case 2:
+                endeavors = _a.sent();
+                res.status(200).json(endeavors);
+                return [3 /*break*/, 4];
+            case 3:
+                error_1 = _a.sent();
+                res.status(500).send('Error fetching endeavors from database');
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
+        }
+    });
+}); });
+exports.endeavorsRouter.get('/count', function (_req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var count, error_2;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, database_service_1.collections.endeavors.find().toArray()];
+                return [4 /*yield*/, database_service_1.collections.endeavors.countDocuments()];
             case 1:
-                endeavors = _a.sent();
-                res.status(200).json(endeavors);
+                count = _a.sent();
+                res.status(200).json({ total: count });
                 return [3 /*break*/, 3];
             case 2:
-                error_1 = _a.sent();
-                res.status(500).send('Error fetching endeavors from database');
+                error_2 = _a.sent();
+                res.status(500).send('Error fetching endeavor count from database');
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
         }
