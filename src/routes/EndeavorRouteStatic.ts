@@ -6,9 +6,9 @@ const endeavors =
     },
     title: "Build a Personal Portfolio Website",
     description: "Create a personal portfolio website to showcase projects, resume, and blog posts.",
-    status: "in-progress",
+    status: "COMPLETE",
     created_at: {
-      date: new Date("2024-06-09T15:57:26.109Z").toISOString()
+      date: new Date("2024-06-09T15:57:26.109Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -17,9 +17,12 @@ const endeavors =
     type: "personal",
     tasks: [
       "Design the layout",
-      "Implement HTML/CSS",
-      "Add JavaScript functionality",
-      "Deploy the website"
+      "Implement Tailwind and React infrastructure to handle the frontend",
+      "Configure TypeScript for type safety",
+      "Create a Node.js backend to serve the site",
+      "Develop several pages for projects, resume, and blog posts",
+      'Develop Layouts for each page',
+      "Deploy the website to a hosting service"
     ]
   },
   {
@@ -30,7 +33,7 @@ const endeavors =
     description: "Develop an innovative decentralized application using blockchain technology.",
     status: "not started",
     created_at: {
-      date: new Date("2024-06-09T16:49:21.243Z").toISOString()
+      date: new Date("2024-06-09T16:49:21.243Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -53,7 +56,7 @@ const endeavors =
     description: "Create a mobile application for iOS devices to solve a specific problem or provide a useful service.",
     status: "not started",
     created_at: {
-      date: new Date("2024-06-09T16:56:36.562Z").toISOString()
+      date: new Date("2024-06-09T16:56:36.562Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -79,7 +82,7 @@ const endeavors =
     
     status: "in-progress",
     created_at: {
-      date: new Date("2024-06-09T16:57:28.263Z").toISOString()
+      date: new Date("2024-06-09T16:57:28.263Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -103,7 +106,7 @@ const endeavors =
     
     status: "not started",
     created_at: {
-      date: new Date("2024-06-09T17:02:02.381Z").toISOString()
+      date: new Date("2024-06-09T17:02:02.381Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -129,7 +132,7 @@ const endeavors =
     
     status: "in progress",
     created_at: {
-      date: new Date("2024-06-09T17:02:53.079Z").toISOString()
+      date: new Date("2024-06-09T17:02:53.079Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -154,7 +157,7 @@ const endeavors =
     
     status: "not started",
     created_at: {
-      date: new Date("2024-06-09T17:05:19.339Z").toISOString()
+      date: new Date("2024-06-09T17:05:19.339Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()
@@ -179,7 +182,7 @@ const endeavors =
     
     status: "in progress",
     created_at: {
-      date: new Date("2024-06-09T17:06:31.194Z").toISOString()
+      date: new Date("2024-06-09T17:06:31.194Z").toLocaleDateString()
     },
     updated_at: {
       date: new Date().toISOString()

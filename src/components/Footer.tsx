@@ -1,19 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-700 p-3 shadow-md mt-6">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-300">
-                <div className="mb-4 md:mb-0">
-                    <h4 className="text-white text-lg font-bold mb-2">Quick Links</h4>
-                    <ul className="space-y-2">
-                        <li><NavLink to="/Endeavors" className="hover:text-white transition duration-300">Endeavors</NavLink></li>
-                        <li><NavLink to="/projects" className="hover:text-white transition duration-300">Projects</NavLink></li>
-                        <li><NavLink to="/blog" className="hover:text-white transition duration-300">Blog</NavLink></li>
-                        <li><NavLink to="/feedback" className="hover:text-white transition duration-300">Feedback</NavLink></li>
-                    </ul>
-                </div>
                 <div className="mb-4 md:mb-0">
                     <h4 className="text-white text-lg font-bold mb-2">Contact Me</h4>
                     <p>Email: AlexPJ.SE23@gmail.com</p>
