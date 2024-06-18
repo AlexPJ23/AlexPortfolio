@@ -8,15 +8,15 @@ const HomePage: React.FC = () => {
         ["My Goals", "Whether it's optimizing performance, enhancing user interfaces, or integrating cutting-edge technologies, I am committed to crafting high-quality, scalable applications. My goal is to leave a positive impact on the digital landscape through innovative and user-centric development."],
     ];
     return (
-        <div className="flex justify-center items-center p-4">
+        <div className= "flex justify-center items-center p-4">
             <div className="flex-shrink-0 text-center">
                 <h2 className="text-4xl font-bold text-gray-800 p-2">Hey, I'm Alex!</h2>
                 <img src={profilePic} alt="Profile" className="w-full max-w-xs h-auto rounded-full border-4 border-black" />
             </div>
             <div className="flex-grow pl-5">
                 {
-                    section.map((tuple) => (
-                        <Section sectionTitle={tuple[0]} SectionDescription={tuple[1]} key={tuple[0]} />
+                    section.map((tuple, index) => (
+                        <Section Title={tuple[0]} Description={tuple[1]} key={index} />
                     ))
                 }
             </div>

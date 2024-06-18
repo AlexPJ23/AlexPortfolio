@@ -1,47 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { EndeavorModel  } from '../types/EndeavorModel';
+
 import EndeavorCard from '../components/EndeavorCard';
 import SpinIt from '../components/Spinner';
+import { endeavors, endeavors_count, endeavor_model } from '../routes/EndeavorRouteStatic';
 
 
 
 const EndeavorPage: React.FC = () => {
-
-  const [endeavors, setEndeavors] = useState<EndeavorModel[]>([]);
+  const totalPages = Math.ceil(endeavors_count / 3);
+  const [endeavor, setEndeavors] = useState<endeavor_model[]>([]);
   const [ currentPage, setCurrentPage ] = useState(1);
-  const [ totalPages, setTotalPages ] = useState(1);
   const [ spinner , setSpinner ] = useState(true);
 
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`/api/endeavors?page=${currentPage}&perPage=3`);
-        const data = await response.json();
-        setEndeavors(data);
-        console.log('Endeavors:', data);
-      } catch (error) {
-        console.error('Fetch data error:', error);
-      } finally {
-        setSpinner(false);
-      }
-    };
-    fetchData();
-  }, [currentPage]);
+    const fetchEndeavors = () => {
+      const startIndex = (currentPage - 1) * 3;
+      const endIndex = startIndex + 3;
+      setEndeavors(
+        // @ts-ignore
+        endeavors.slice(startIndex, endIndex)
+      );
+      setSpinner(false);
+    }
+    fetchEndeavors();
+  }, [currentPage])
 
-  useEffect(() => {
-    const fetchTotalPages = async () => {
-      try {
-        const response = await fetch('/api/endeavors/count');
-        const data = await response.json();
-        setTotalPages(Math.ceil(data.total / 3));
-        console.log('Total pages:', data.total);
-      } catch (error) {
-        console.error('Fetch total pages error:', error);
-      }
-    };
-    fetchTotalPages();
-  }, []);
 
   const createPagination = () => {
     const pagination = [];
@@ -62,7 +45,7 @@ const EndeavorPage: React.FC = () => {
         spinner ? <SpinIt  /> : (
           <>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {endeavors.map((endeavor, index) => (
+            {endeavor.map((endeavor, index) => (
               <EndeavorCard key={index} endeavor={endeavor} />
             ))}
           </div>

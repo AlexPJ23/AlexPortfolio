@@ -5,7 +5,6 @@ import * as dotenv from "dotenv";
 
 export const collections : { endeavors?: mongoDB.Collection } = {};
 
-export const collection_projects : { projects?: mongoDB.Collection } = {};
 
 export async function connectToDatabase () {
     dotenv.config();

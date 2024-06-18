@@ -11,7 +11,8 @@ import NotFoundPage from "./pages/NotFoundPage"
 import SinglePageEndeavor from "./pages/SingleEndeavorPage"
 import ProjectsPage from "./pages/ProjectsPage"
 import BlogsPage from "./pages/BlogsPage"
-import AchievementPage from "./pages/AchievementPage"
+import FeedbackPage from "./pages/FeedbackPage"
+
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<MainLayout/>}>
@@ -19,8 +20,8 @@ const router = createBrowserRouter(
          <Route path="/endeavors" element={<EndeavorPage />}/>
          <Route path="/endeavors/:id" element={<SinglePageEndeavor />}/>
          <Route path='/projects' element={<ProjectsPage />}/>
-         <Route path="/blogs" element={<BlogsPage />}/>
-         <Route path="/achievements" element={<AchievementPage />}/>
+         <Route path="/blog" element={<BlogsPage />}/>
+         <Route path="/feedback" element={<FeedbackPage />}/>
          <Route path="*" element={<NotFoundPage/>}/>
         </Route>
 )
